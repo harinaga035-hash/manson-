@@ -53,7 +53,7 @@ function MainAppContent() {
         <Route path="/blog-news" element={<BlogNews />} />
         <Route path="/contact-us" element={<ContactUs />} />
         {/* Fallback to home */}
-        <Route path="*" element={<Home />} />
+        {/* <Route path="*" element={<Home />} /> */}
       </Routes>
       <Footer />
       <FloatingPanel />

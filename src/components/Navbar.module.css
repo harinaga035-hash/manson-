@@ -46,8 +46,10 @@
   border-radius: 8px;
   display: grid;
   place-items: center;
-  background: #014421; /* Match MSB brand green */
-  color: #c9a227; /* Match gold */
+  background: #014421;
+  /* Match MSB brand green */
+  color: #c9a227;
+  /* Match gold */
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 19px;
@@ -194,7 +196,8 @@
   font-size: 13px;
   font-weight: 600;
   border-radius: 6px;
-  border: 1.5px solid #014421; /* Dark green outline in screenshot */
+  border: 1.5px solid #014421;
+  /* Dark green outline in screenshot */
   color: #0c1612;
   background: #ffffff;
   transition: all var(--dur) var(--ease);
@@ -217,7 +220,8 @@
   font-size: 13px;
   font-weight: 600;
   border-radius: 6px;
-  background: #014421; /* Dark green solid background */
+  background: #014421;
+  /* Dark green solid background */
   color: #ffffff;
   transition: all var(--dur) var(--ease);
   border: 1px solid transparent;
@@ -323,6 +327,7 @@
     opacity: 0;
     transform: translateY(-12px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -331,10 +336,12 @@
 
 /* Responsiveness */
 @media (max-width: 1200px) {
+
   .nav,
   .ctas {
     display: none;
   }
+
   .hamburger {
     display: grid;
     place-items: center;
@@ -345,6 +352,7 @@
   .brandSub {
     display: none;
   }
+
   .mobileCtas {
     grid-template-columns: 1fr;
   }

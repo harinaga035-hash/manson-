@@ -111,7 +111,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Trust Bar Below Hero */}
+      {/* Trust Bar Below Hero
       <div className={s.trustBar}>
         <div className={s.trustInner}>
           <div className={s.trustItem}>
@@ -122,8 +122,8 @@ export function Hero() {
               width="24"
               height="24"
               fill="currentColor"
-            >
-              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            > */}
+      {/* <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
               <circle
                 cx="12"
                 cy="12"
@@ -139,7 +139,7 @@ export function Hero() {
               <path d="M10 17h4v1.5h-4z" />
             </svg>
             <span className={s.trustBold}>AICTE</span>
-          </div>
+          </div >
           <div className={s.trustDividerLine} />
           <div className={s.trustItem}>
             <span className={s.trustLabel}>Affiliated to</span>
@@ -183,8 +183,8 @@ export function Hero() {
               <span className={s.rankingSmall}>in Telangana</span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </div >
+      </div > */}
+    </section >
   );
 }
