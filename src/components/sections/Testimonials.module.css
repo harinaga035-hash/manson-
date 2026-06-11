@@ -1,0 +1,112 @@
+.section {
+  padding: 120px 0;
+  background: var(--msb-ink);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center top, rgba(1, 68, 33, 0.5), transparent 70%);
+  pointer-events: none;
+}
+.inner {
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 48px);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.eyebrow {
+  color: var(--msb-gold-bright);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--msb-gold);
+}
+.quoteMark {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  line-height: 0.6;
+  color: var(--msb-gold);
+  display: block;
+  margin: 32px auto -16px;
+}
+.quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.4;
+  color: #fff;
+  font-weight: 400;
+  max-width: 28ch;
+  margin: 0 auto;
+  letter-spacing: -0.01em;
+}
+.person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 40px;
+}
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--msb-gold);
+  padding: 2px;
+}
+.who {
+  text-align: left;
+}
+.who .n {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.who .r {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition:
+    background var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+.dot.active {
+  background: var(--msb-gold);
+  transform: scale(1.3);
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 80px 0;
+  }
+}

@@ -1,0 +1,319 @@
+/* =========================================================
+   Manson School of Business — Routed Subpages Styles
+   ========================================================= */
+
+.page {
+  padding-top: 100px; /* clears fixed navbar */
+  min-height: 80vh;
+  background: #faf8f4;
+  color: var(--text);
+  font-family: var(--font-sans);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 48px);
+  position: relative;
+  z-index: 2;
+}
+
+/* Elegant Subpage Header Banner */
+.pageHeader {
+  text-align: center;
+  padding: 60px 0 40px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.pageHeader::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #c9a227;
+  margin: 24px auto 0;
+  border-radius: 2px;
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  color: #0b3d2e;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.pageSubtitle {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: #747470;
+  margin-top: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Premium Card and Letterhead containers */
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(12, 22, 18, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  padding: clamp(24px, 4vw, 40px);
+  margin-bottom: 32px;
+  transition: transform var(--dur) var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(11, 61, 46, 0.04);
+}
+
+/* Frosted glass variant */
+.glassCard {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+  padding: clamp(24px, 4vw, 40px);
+  margin-bottom: 32px;
+}
+
+/* Chairperson Letter style container */
+.letterhead {
+  background: #ffffff;
+  border: 1px solid rgba(201, 162, 39, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(11, 61, 46, 0.03);
+  padding: clamp(24px, 5vw, 56px);
+  position: relative;
+  overflow: hidden;
+}
+
+.letterhead::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0b3d2e 0%, #c9a227 100%);
+}
+
+.letterRole {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  color: #c9a227;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.letterName {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: #0b3d2e;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.letterSubname {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: #8c8c88;
+  margin-top: 2px;
+}
+
+.letterContent {
+  font-family: var(--font-serif);
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: #3e3e3a;
+  margin-top: 28px;
+}
+
+.letterContent p {
+  margin-bottom: 20px;
+}
+
+.letterSign {
+  margin-top: 36px;
+  border-top: 1px dashed rgba(12, 22, 18, 0.1);
+  padding-top: 20px;
+  display: inline-block;
+}
+
+.signTitle {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: #0b3d2e;
+}
+
+.signDesc {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: #747470;
+  margin-top: 4px;
+}
+
+/* Grids and Columns layout */
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.sectionHeader {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: #0b3d2e;
+  font-weight: 700;
+  margin-bottom: 24px;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionHeader::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: #c9a227;
+  margin-top: 8px;
+}
+
+/* Lists and Items */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.listDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9a227;
+  margin-top: 9px;
+  flex-shrink: 0;
+}
+
+.listText {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #4a4a46;
+}
+
+/* Table layout styling for eligibility and fee details */
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(12, 22, 18, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  margin-bottom: 32px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14.5px;
+}
+
+.table th {
+  background: #0b3d2e;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 14px 20px;
+  font-family: var(--font-sans);
+}
+
+.table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(12, 22, 18, 0.06);
+  color: #4a4a46;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:nth-child(even) {
+  background: rgba(250, 248, 244, 0.5);
+}
+
+/* Highlight capsules */
+.badgeGold {
+  display: inline-flex;
+  padding: 4px 10px;
+  background: #fdf6e2;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 6px;
+  color: #c9a227;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.badgeGreen {
+  display: inline-flex;
+  padding: 4px 10px;
+  background: #e6f0ec;
+  border: 1px solid rgba(11, 61, 46, 0.15);
+  border-radius: 6px;
+  color: #0b3d2e;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+/* Responsive configurations */
+@media (max-width: 1024px) {
+  .grid3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding-top: 80px;
+  }
+
+  .grid2,
+  .grid3 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .letterhead {
+    padding: 24px;
+  }
+}

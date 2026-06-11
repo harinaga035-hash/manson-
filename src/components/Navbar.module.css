@@ -1,0 +1,351 @@
+.wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  width: 100%;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  background: rgba(253, 251, 247, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(12, 22, 18, 0.05);
+  transition: all 0.3s cubic-bezier(0.21, 0.6, 0.35, 1);
+}
+
+.wrap.scrolled {
+  height: 75px;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom-color: rgba(12, 22, 18, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.inner {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: #014421; /* Match MSB brand green */
+  color: #c9a227; /* Match gold */
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  box-shadow: 0 4px 10px rgba(1, 68, 33, 0.08);
+  position: relative;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15.5px;
+  color: #0c1612;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.brandSub {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #014421;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.navItemWithDropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.link {
+  position: relative;
+  padding: 8px 12px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #4a4a46;
+  transition: color var(--dur) var(--ease);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #0c1612;
+}
+
+.link.active {
+  color: #014421;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: -4px;
+  height: 2px;
+  background: #c9a227;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.21, 0.6, 0.35, 1);
+}
+
+.link:hover::after,
+.link.active::after {
+  transform: scaleX(1);
+}
+
+.chevron {
+  transition: transform var(--dur) var(--ease);
+  color: #8e8e88;
+}
+
+.navItemWithDropdown:hover .chevron {
+  transform: rotate(180deg);
+  color: #c9a227;
+}
+
+/* Dropdown Menu styling */
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 16px 40px rgba(1, 68, 33, 0.08);
+  border: 1px solid rgba(1, 68, 33, 0.05);
+  padding: 8px;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.21, 0.6, 0.35, 1);
+  z-index: 100;
+}
+
+.navItemWithDropdown:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdownItem {
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #545450;
+  border-radius: 6px;
+  transition: all var(--dur) var(--ease);
+  white-space: nowrap;
+}
+
+.dropdownItem:hover {
+  background: rgba(201, 162, 39, 0.06);
+  color: #8c6f12;
+  padding-left: 16px;
+}
+
+.ctas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ctaGhost {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1.5px solid #014421; /* Dark green outline in screenshot */
+  color: #0c1612;
+  background: #ffffff;
+  transition: all var(--dur) var(--ease);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ctaGhost:hover {
+  background: rgba(1, 68, 33, 0.04);
+  transform: translateY(-1px);
+}
+
+.ctaIcon {
+  color: #545450;
+}
+
+.ctaPrimary {
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  background: #014421; /* Dark green solid background */
+  color: #ffffff;
+  transition: all var(--dur) var(--ease);
+  border: 1px solid transparent;
+}
+
+.ctaPrimary:hover {
+  background: #002c15;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(1, 68, 33, 0.15);
+}
+
+.hamburger {
+  display: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid rgba(12, 22, 18, 0.1);
+  background: transparent;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all var(--dur) var(--ease);
+}
+
+.hamburger:hover {
+  background: rgba(12, 22, 18, 0.03);
+}
+
+/* Mobile panel */
+.mobilePanel {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: #014421;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 24px 30px;
+  overflow-y: auto;
+  animation: slideDown 360ms var(--ease);
+}
+
+.mobileClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.mobileLink {
+  display: block;
+  padding: 14px 0;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all var(--dur) var(--ease);
+}
+
+.mobileLink:hover {
+  color: #c9a227;
+  padding-left: 8px;
+}
+
+.mobileCtas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.mobileCta {
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  border: none;
+}
+
+.mobileCtaPrimary {
+  background: #c9a227;
+  color: #014421;
+}
+
+.mobileCtaGhost {
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: #ffffff;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .nav,
+  .ctas {
+    display: none;
+  }
+  .hamburger {
+    display: grid;
+    place-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandSub {
+    display: none;
+  }
+  .mobileCtas {
+    grid-template-columns: 1fr;
+  }
+}

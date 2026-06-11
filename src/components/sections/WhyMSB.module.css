@@ -1,0 +1,121 @@
+.section {
+  padding: 120px 0;
+  background: var(--msb-off-white);
+}
+.inner {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 48px);
+}
+.head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+}
+.heading em {
+  font-style: italic;
+  color: var(--msb-green);
+  font-weight: 400;
+}
+.lede {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 52ch;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.card {
+  padding: 36px 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--msb-green), var(--msb-gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms var(--ease);
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: transparent;
+  box-shadow: var(--shadow-lg);
+}
+.card:hover::before {
+  transform: scaleX(1);
+}
+.iconWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(1, 68, 33, 0.08), rgba(201, 161, 74, 0.12));
+  color: var(--msb-green);
+  display: grid;
+  place-items: center;
+  margin-bottom: 24px;
+}
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--msb-ink);
+}
+.cardBody {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+.num {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--msb-gold);
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 900px) {
+  .head {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .section {
+    padding: 80px 0;
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

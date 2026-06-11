@@ -1,0 +1,187 @@
+/* =========================================================
+   Manson School of Business — Global Design System
+   Pure CSS (no Tailwind utilities). Tokens + reset only.
+   ========================================================= */
+
+:root {
+  /* Brand */
+  --msb-green: #014421;
+  --msb-green-deep: #00301a;
+  --msb-green-soft: #0b6e4f;
+  --msb-gold: #c9a14a; /* Refined gold — less neon than #FFD700 */
+  --msb-gold-bright: #ffd56b;
+  --msb-white: #ffffff;
+  --msb-off-white: #fafaf7;
+  --msb-cream: #f4efe6;
+  --msb-gray-50: #f6f6f4;
+  --msb-gray-100: #ececea;
+  --msb-gray-200: #d9d9d4;
+  --msb-gray-400: #8e8e88;
+  --msb-gray-600: #545450;
+  --msb-charcoal: #1a1a1a;
+  --msb-ink: #0c1612;
+
+  /* Semantic */
+  --bg: var(--msb-off-white);
+  --surface: #ffffff;
+  --text: var(--msb-ink);
+  --text-muted: var(--msb-gray-600);
+  --border: rgba(12, 22, 18, 0.08);
+  --border-strong: rgba(12, 22, 18, 0.18);
+  --shadow-sm: 0 1px 2px rgba(12, 22, 18, 0.04), 0 1px 1px rgba(12, 22, 18, 0.03);
+  --shadow-md: 0 8px 24px -8px rgba(12, 22, 18, 0.12), 0 2px 4px rgba(12, 22, 18, 0.04);
+  --shadow-lg: 0 24px 60px -20px rgba(1, 68, 33, 0.25), 0 8px 16px -8px rgba(12, 22, 18, 0.08);
+  --shadow-xl: 0 40px 100px -30px rgba(1, 68, 33, 0.35);
+
+  /* Fonts */
+  --font-display: "Playfair Display", "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Merriweather", Georgia, serif;
+
+  /* Layout */
+  --container: 1240px;
+  --container-narrow: 980px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur: 280ms;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 0;
+  color: var(--msb-ink);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+}
+h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+}
+h3 {
+  font-size: clamp(1.4rem, 2.2vw, 1.875rem);
+}
+p {
+  margin: 0;
+}
+
+::selection {
+  background: var(--msb-green);
+  color: var(--msb-gold-bright);
+}
+
+/* Container helper for raw consumers */
+.msb-container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 48px);
+}
+
+/* Eyebrow label used across sections */
+.msb-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--msb-green);
+}
+.msb-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--msb-gold);
+}
+
+/* Reveal animation utility */
+@keyframes msbFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.msb-reveal {
+  opacity: 0;
+}
+.msb-reveal.is-visible {
+  animation: msbFadeUp 700ms var(--ease) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
